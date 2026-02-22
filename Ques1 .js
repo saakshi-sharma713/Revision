@@ -42,7 +42,9 @@ function getBankDetails(){
     catch(error){
         console.log(error.message)
     }
-    return bankAccount;
+   
+}
+ return bankAccount;
 }
 
 
