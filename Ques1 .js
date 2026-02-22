@@ -2,10 +2,10 @@ function getBankDetails(){
     let balance=0;
     let transaction=[];
     function bankAccount(){
-        try{
+        
         return  {
             deposit : function (amount){
-                if(balance>0){
+                if(balance>=0){
                     balance+=amount;
                 res = `Amount Deposited ${amount}`
                 console.log(res)
@@ -14,7 +14,7 @@ function getBankDetails(){
                
             },
             withdraw:function(amount){
-                if(balance > 0){
+                if(balance >= 0){
                      balance-=amount;
                       res = `Amount Withdrawn ${amount}`
                 console.log(res)
@@ -38,15 +38,13 @@ function getBankDetails(){
 
 
         }
-    }
-    catch(error){
-        console.log(error.message)
-    }
+    
    
 }
  return bankAccount;
 }
 
 
-const result = getBankDetails();
-console.log(result().deposit);
+const result = getBankDetails()();
+result.deposit(900);
+result.transactionHistory();
